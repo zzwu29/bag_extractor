@@ -1,5 +1,5 @@
-# bag_extractor
-An efficient rosbag extractor script for multi-topics (Camera, IMU, GNSS, UWB and groundtruth) in Python
+# bag_script
+Efficient rosbag scripts for multi-topics (Camera, IMU, GNSS, UWB and groundtruth) in Python
 
 # Acknowledgement:
    [Kalibr](https://github.com/ethz-asl/kalibr) kalibr_bagextractor.py
