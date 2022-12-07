@@ -1,4 +1,4 @@
-# bag_script
+# bag_scripts
 Efficient rosbag scripts for multi-topics (Camera, IMU, GNSS, UWB and groundtruth) in Python
 
 # Acknowledgement:
