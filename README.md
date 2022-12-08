@@ -11,7 +11,8 @@ Getting Started
 git clone https://github.com/zzwu29/bag_scripts.git
 ```
 
-# Acknowledgement:
+Acknowledgement
+---------------
    [Kalibr](https://github.com/ethz-asl/kalibr) kalibr_bagextractor.py
    
    [VIRAL Dataset](https://github.com/ntu-aris/ntu_viral_dataset) and [Dr. Nguyen](https://github.com/brytsknguyen)
