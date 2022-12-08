@@ -1,14 +1,14 @@
-# bag_scripts
+Science Plots
+=============
+
 Efficient rosbag scripts for multi-topics (Camera, IMU, GNSS, UWB and groundtruth) in Python
 
 Getting Started
 ---------------
 
-The easiest way to install SciencePlots is by using `pip`:
-
 ```bash
 
-# to clone and install from a local copy
+# to clone and install
 git clone 
 ```
 
