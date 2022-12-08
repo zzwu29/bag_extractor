@@ -11,6 +11,15 @@ Getting Started
 git clone https://github.com/zzwu29/bag_scripts.git
 ```
 
+Usage
+--------------
+
+
+```bash
+
+python extract_image.py --bag * --image_topics * --imu_topics * --gnss_topics * --uwb_topics * --gt_topics * --output_folder ?(default: ~/Desktop/)
+```
+
 Acknowledgement
 ---------------
    [Kalibr](https://github.com/ethz-asl/kalibr) kalibr_bagextractor.py
