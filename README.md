@@ -8,8 +8,7 @@ Getting Started
 
 ```bash
 
-# to clone and install
-git clone 
+git clone https://github.com/zzwu29/bag_scripts.git
 ```
 
 # Acknowledgement:
