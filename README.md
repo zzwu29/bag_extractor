@@ -17,7 +17,7 @@ Usage
 
 ```bash
 
-python extract_image.py --bag * --image_topics * --imu_topics * --gnss_topics * --uwb_topics * --gt_topics * --output_folder ?(default: ~/Desktop/)
+python bag_extractor.py --bag * --image_topics * --imu_topics * --gnss_topics * --uwb_topics * --gt_topics * --output_folder ?(default: ~/Desktop/)
 ```
 
 Acknowledgement
