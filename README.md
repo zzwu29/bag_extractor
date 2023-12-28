@@ -1,7 +1,9 @@
 bag_scripts
 =============
 
-Efficient rosbag scripts for multi-topics (Camera, IMU, GNSS, UWB and groundtruth) in Python
+Efficient rosbag scripts for multi-topics (Camera, IMU, GNSS, UWB and groundtruth) in Python.
+
+And for lidar file, please refer to this [repositorty](https://github.com/zzwu29/livox_repub).
 
 Getting Started
 ---------------
