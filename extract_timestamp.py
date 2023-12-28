@@ -35,7 +35,7 @@ def extract_timestamp(dir = "", prefix = "", time_scale = 1e9, syn_eps = 1e-3):
                       + "t_gps [week "+ str(gps_week) +" sec "+str(gps_sow)+ " hms " +str(hour) + " "+str(min) + " "+str(sec) + " " +"]")
             
             if fabs(gps_sow - round(gps_sow*1000)/1000)<=syn_eps:
-                output_time = round(gps_sow*1000)/1000 #modify timestamp to a accurate value
+                output_time = round(gps_sow*1000)/1000 #modify timestamp to an accurate value
             else:
                 output_time = int(gps_sow*1000)/1000
             
