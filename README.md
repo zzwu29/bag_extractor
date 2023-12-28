@@ -14,10 +14,17 @@ git clone https://github.com/zzwu29/bag_scripts.git
 Usage
 --------------
 
-
+extract raw data
 ```bash
 
 python bag_extractor.py --bag * --image_topics * --imu_topics * --gnss_topics * --uwb_topics * --gt_topics * --output_folder ?(default: ~/Desktop/)
+```
+
+
+extract timestamp from raw data file name
+```bash
+
+python extract_timestamp.py
 ```
 
 Acknowledgement
