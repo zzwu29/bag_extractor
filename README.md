@@ -35,4 +35,6 @@ Acknowledgement
    
    [VIRAL Dataset](https://github.com/ntu-aris/ntu_viral_dataset) and [Dr. Nguyen](https://github.com/brytsknguyen)
    
-   [wang-chen](https://github.com/wang-chen/uwb_driver)
+   [uwb_driver](https://github.com/wang-chen/uwb_driver)
+
+   [livox_repub](https://github.com/kafeiyin00/livox_repub)
