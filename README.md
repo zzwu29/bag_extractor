@@ -29,6 +29,12 @@ extract timestamp from raw data file name
 python extract_timestamp.py
 ```
 
+convert IMU unix timestamp to gps time, interpolate IMU raw data, and convert IMU measurement units
+```bash
+
+python conv_imu_timestamp.py
+```
+
 Acknowledgement
 ---------------
  -  [Kalibr](https://github.com/ethz-asl/kalibr) kalibr_bagextractor.py
