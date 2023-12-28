@@ -17,7 +17,7 @@ def extract_timestamp(dir = "", prefix = "", time_scale = 1e9, syn_eps = 1e-3):
             # http://www.leapsecond.com/java/gpsclock.htm
             leapsec = 18 #GPS time was zero at 0h 6-Jan-1980 and since it is not perturbed by leap seconds GPS is now ahead of UTC by 18 seconds.
 
-            t_gps_sec = t_unix_sec - err + 18
+            t_gps_sec = t_unix_sec - err + leapsec
             gps_week = floor(t_gps_sec/(86400 * 7)) # gps week
             gps_sow = t_gps_sec - gps_week*(86400 * 7) # sec of week
             dow =  floor(gps_sow/(86400)) # day of week
@@ -40,6 +40,8 @@ def extract_timestamp(dir = "", prefix = "", time_scale = 1e9, syn_eps = 1e-3):
                 output_time = int(gps_sow*1000)/1000
             
             f.write(str(output_time) + ","+file+"\n")
+        
+    f.close()
 
 
 if __name__ == '__main__':
