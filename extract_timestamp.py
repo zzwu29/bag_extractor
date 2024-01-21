@@ -5,6 +5,8 @@ def extract_timestamp(dir = "", prefix = "", time_scale = 1e9, syn_eps = 1e-3):
     list = os.listdir(dir)
 
     with open(prefix + "timestamp.txt", "w") as f:
+        file_idx = 0
+        file_num = len(list)
         for file in list:
             base=os.path.splitext(file)[0]
             ext=os.path.splitext(file)[1]
@@ -40,15 +42,20 @@ def extract_timestamp(dir = "", prefix = "", time_scale = 1e9, syn_eps = 1e-3):
                 output_time = int(gps_sow*1000)/1000
             
             f.write(str(output_time) + ","+file+"\n")
+            
+            file_idx = file_idx + 1
+            print("Process ===== %.2f"%(100*file_idx/file_num)+"% =====\r", end='')
         
     f.close()
 
 
 if __name__ == '__main__':
     img_path = "../img0/data/"
-    lidar_path = "../pcd/"
-    
     extract_timestamp(img_path,time_scale = 1e9,prefix="cam_")
+
+    lidar_path = "../pcd/"
+    #for cmd  "rosrun pcl_ros pointcloud_to_pcd input:=/point_cloud_topic _prefix:=./pcd_save_path"
+    #the time_scale is 1e6
     extract_timestamp(lidar_path,time_scale = 1e6,prefix="lidar_")
 
 
