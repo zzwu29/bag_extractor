@@ -41,10 +41,16 @@ convert IMU from gps timestamp to unix timestamp for [kalibr_bagcreater.py](./ka
 python imu_to_unix_csv.py
 ```
 
-create rosbag from imu and image topics, refer [here](https://github.com/ethz-asl/kalibr/wiki/Bag-format) for the format requirements
+copy and rename images from gps timestamp to unix timestamp for [kalibr_bagcreater.py](./kalibr_bagcreater.py) to pack
 ```bash
 
-python kalibr_bagcreater.py
+python img_unix_copy.py
+```
+
+create rosbag from imu and image topics, refer [here](https://github.com/ethz-asl/kalibr/wiki/Bag-format) for the format requirements(**support rgb images and greyscale images**)
+```bash
+
+ python kalibr_bagcreater.py --folder YOUR_FOLDER --output-bag YOUR_BAG.bag [--color]
 ```
 
 merge multiple rosbags
