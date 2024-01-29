@@ -20,6 +20,8 @@ import csv
 parser = argparse.ArgumentParser(description='Create a ROS bag using the images and imu data.')
 parser.add_argument('--folder',  metavar='folder', nargs='?', help='Data folder')
 parser.add_argument('--output-bag', metavar='output_bag',  default="output.bag", help='ROS bag file %(default)s')
+parser.add_argument("--color", action="store_true", help="Images are IMREAD_COLOR or IMREAD_GRAYSCALE.")
+
 
 #print help if no argument is specified
 if len(sys.argv)<2:
@@ -66,7 +68,10 @@ def getImuCsvFiles(dir):
     return imu_files
 
 def loadImageToRosMsg(filename, cam_name):
-    image_np = cv2.imread(filename, cv2.IMREAD_GRAYSCALE)
+    if parsed.color == False:
+        image_np = cv2.imread(filename, cv2.IMREAD_GRAYSCALE)
+    else:
+        image_np = cv2.imread(filename, cv2.IMREAD_COLOR)
     
     timestamp_nsecs = os.path.splitext(os.path.basename(filename))[0]
     timestamp = rospy.Time( secs=int(timestamp_nsecs[0:-9]), nsecs=int(timestamp_nsecs[-9:]) )
@@ -76,8 +81,12 @@ def loadImageToRosMsg(filename, cam_name):
     rosimage.header.frame_id = cam_name
     rosimage.height = image_np.shape[0]
     rosimage.width = image_np.shape[1]
-    rosimage.step = rosimage.width  #only with mono8! (step = width * byteperpixel * numChannels)
-    rosimage.encoding = "mono8"
+    if parsed.color == False:
+        rosimage.step = rosimage.width  #only with mono8! (step = width * byteperpixel * numChannels)
+        rosimage.encoding = "mono8"
+    else:
+        rosimage.step = rosimage.width * 3  #only with mono8! (step = width * byteperpixel * numChannels)
+        rosimage.encoding = "bgr8"
     rosimage.data = image_np.tobytes()
     
     return rosimage, timestamp

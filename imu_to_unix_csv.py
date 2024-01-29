@@ -13,6 +13,7 @@ if __name__ == '__main__':
     gps_week = 2257   #!!!!!!! change here, check http://www.igs.gnsswhu.cn/index.php/home/data_product/igs.html
     
     start_sec, end_sec = 284450, 284680
+    start_sec, end_sec = 284431, 284700
 
     imu_data = np.loadtxt(imu_file)
     imu_dt = imu_data[1:,0] - imu_data[0:-1,0]
